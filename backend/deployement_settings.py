@@ -23,7 +23,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://primetradeai-assignmentfrontend-9f8o.onrender.com/'
+   'https://primetradeai-assignmentfrontend-9f8o.onrender.com',
 ]
 
 
