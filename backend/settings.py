@@ -13,6 +13,17 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from datetime import timedelta
+import environ
+
+import os
+import environ
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Initialise environment variables
+env = environ.Env()
+env_path = os.path.join(BASE_DIR, ".env")
+environ.Env.read_env(env_path)   # explicitly tell where .env is
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -151,8 +162,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'prashantklko313@gmail.com'
-EMAIL_HOST_PASSWORD = 'dmlf uuoz cpkq swfs'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')       # from .env
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]  # frontend origin (Vite default)
 ALLOWED_HOSTS=['localhost','127.0.0.1']
