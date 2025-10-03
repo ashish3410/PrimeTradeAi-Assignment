@@ -22,9 +22,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     ''
-# ]
+CORS_ALLOWED_ORIGINS = [
+    'https://primetradeai-assignmentfrontend-9f8o.onrender.com/'
+]
 
 
 STORAGES={
