@@ -167,3 +167,9 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]  # frontend origin (Vite default)
 ALLOWED_HOSTS=['localhost','127.0.0.1']
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# React build files
+TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'primeTradeAsgn', 'build')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'primeTradeAsgn', 'build', 'static')]
